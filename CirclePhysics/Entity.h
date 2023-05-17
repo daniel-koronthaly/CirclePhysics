@@ -6,6 +6,7 @@ public:
 	Entity(Collider c, std::string name, int health = 10, bool active = true);
 	void setHealth(int h);
 	int getHealth() const;
+	int getMaxHealth() const;
 	void subtractHealth(int h);
 	void setActive(bool b);
 	bool getActive() const;
@@ -17,6 +18,7 @@ public:
 	virtual void onDeath() = 0;
 
 protected:
+	int _maxHealth;
 	int _health;
 	bool _active;
 	Collider _collider;

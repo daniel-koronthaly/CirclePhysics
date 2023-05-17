@@ -1,7 +1,7 @@
 #include "Entity.h"
 
 
-Entity::Entity(Collider c, std::string name, int health, bool active) : _collider(c), _name(name), _health(health), _active(active){}
+Entity::Entity(Collider c, std::string name, int health, bool active) : _collider(c), _name(name), _maxHealth(health), _health(health), _active(active){}
 
 void Entity::setHealth(int h) {
 	_health = h;
@@ -14,6 +14,9 @@ void Entity::subtractHealth(int h) {
 }
 int Entity::getHealth() const {
 	return _health;
+}
+int Entity::getMaxHealth() const {
+	return _maxHealth;
 }
 void Entity::setActive(bool b) {
 	_active = b;

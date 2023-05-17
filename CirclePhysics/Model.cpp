@@ -157,6 +157,10 @@ int Model::getWidth() {
 	return _width;
 }
 
+const Player* Model::getPlayer() const {
+	return _p;
+}
+
 void Model::setPlayer(Player* p) {
 	_p = p;
 }

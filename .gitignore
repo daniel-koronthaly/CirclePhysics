@@ -1,0 +1,15 @@
+*.user
+*.exe
+*.dll
+*.lib
+*.obj
+*.log
+*.pdb
+*.exp
+*.tlog
+*.lastbuildstat
+*/x64/*
+*/Debug/*
+*/Release/*
+.vs/*
+docs/*

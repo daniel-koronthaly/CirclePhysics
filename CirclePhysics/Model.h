@@ -19,6 +19,7 @@ public:
 	void addEntity(Entity* c);
 	int getHeight();
 	int getWidth();
+	const Player* getPlayer() const;
 	void setPlayer(Player* p);
 	std::vector<Entity*> getEntities();
 private:

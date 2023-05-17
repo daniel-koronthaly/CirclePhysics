@@ -12,14 +12,14 @@
 #include "Player.h"
 #include "Enemy.h"
 
-#define WINDOW_HEIGHT 1050
-#define WINDOW_WIDTH 1500
-#define MS_PER_FRAME 20
+#define WINDOW_HEIGHT 750
+#define WINDOW_WIDTH 750
+#define MS_PER_FRAME 10
 #define COLLIDER_MASS_DEFAULT 1
 #define COLLIDER_WIDTH_DEFAULT 5
 #define COLLIDER_HEIGHT_DEFAULT 5
 
-#define RAND_COLLIDERS_INITIALIZED 25
+#define RAND_COLLIDERS_INITIALIZED 15
 #define INIT_FROM_FILE false
 #define MAX_WIDTH_HEIGHT 40
 #define MIN_WIDTH_HEIGHT 8
@@ -27,8 +27,8 @@
 #define MASS_WIDTH_HEIGHT_RATIO 10
 #define MAX_RGB 255
 
-#define HEIGHT 700
-#define WIDTH 1000
+#define HEIGHT 500
+#define WIDTH 500
 
 
 
@@ -153,6 +153,8 @@ int main() {
 		previous = current;
 		Vector2 v = controller.getDirection();
 		m.update(elapsed_seconds.count(), v);
+		std::chrono::duration<double> timer = current - start;
+		r.setCurrTime(timer.count());
 		window->Invalidate();
 		if (elapsed_seconds.count() * 1000 < MS_PER_FRAME) {
 			Sleep(MS_PER_FRAME - (elapsed_seconds.count() * 1000));
